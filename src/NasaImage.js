@@ -1,11 +1,13 @@
 import React from 'react'; 
 
-export default function nasaImage(props) {
-    const [nasaImage] = props; 
-
+const nasaImage = props => {
+    const { image } = props; 
     return (
-        <div className='Photo'>
-            <img src={nasaImage} alt="A Comet" />
+        <div>
+            <div className='nasa-image' key='nasa-image-container'></div>
+            <img src={nasaImage} alt="Comet" />
         </div>
     ); 
-}
+}; 
+
+export default nasaImage; 

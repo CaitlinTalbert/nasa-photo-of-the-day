@@ -33,6 +33,16 @@ function App() {
 
   return (
     <div className="App">
+
+    <nav>
+      <a 
+      href="http://www.calendardate.com/todays.htm"
+      target="_blank"
+      rel="noopener noreferrer">
+        {nasaData.date}
+      </a>
+    </nav>
+
       <h1>{nasaData.title}</h1>
       <Image nasaURL={nasaData.url} />
       <Explanation text={nasaData.explanation} />

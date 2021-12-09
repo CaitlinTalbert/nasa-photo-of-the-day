@@ -7,6 +7,7 @@ import { API_URL, API_KEY} from "./Constants.js";
 //Components 
 import Image from "./components/Image/Image.js"; 
 import Explanation from "./components/Explanation/Explanation.js";
+import Copyright from "./components/Copyright/Copyright.js"; 
 
 
 //stylesheets
@@ -46,6 +47,7 @@ function App() {
       <h1>{nasaData.title}</h1>
       <Image nasaURL={nasaData.url} />
       <Explanation text={nasaData.explanation} />
+      <Copyright copyright={nasaData.copyright} />
     </div>
   );
 }

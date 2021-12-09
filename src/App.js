@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>{nasaData.title}</h1>
       <Image nasaURL={nasaData.url} />
       <Explanation text={nasaData.explanation} />
     </div>

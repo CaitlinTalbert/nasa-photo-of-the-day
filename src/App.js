@@ -18,10 +18,11 @@ function App() {
 
   useEffect(() => {
     const fetchData = () => {
-        axios.get(`${API_URL}?api_key=${API_KEY}`)
+        axios
+        .get(`${API_URL}?api_key=${API_KEY}`)
         .then((res) => {
           console.log(res.data); 
-          setNasaData(res.data)
+          setNasaData(res.data);
         })
         .catch((err) => {
           console.error(err);

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'; 
+import React { useState } from "react"; 
 import "./index.css"; 
 
-const Image = props => {
+const Image = (props) => {
     const { nasaURL } = props; 
     return (
        <div>
-           <img src={nasaURL} />
+           <img src={nasaURL}/>
        </div>
     ); 
 }; 

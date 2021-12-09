@@ -1,7 +1,7 @@
 //dependencies 
 import React, { useState, useEffect } from "react";
-import axios from 'axios'; 
-import { API_URL, API_KEY,} from "./Constants"; 
+import axios from "axios"; 
+import { API_URL, API_KEY} from "./Constants.js"; 
 
 
 //Components 

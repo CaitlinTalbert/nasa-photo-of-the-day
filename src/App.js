@@ -1,33 +1,42 @@
+//dependencies 
 import React, { useState, useEffect } from "react";
 import axios from 'axios'; 
-import NasaImage from './NasaImage'; 
+import { API_URL, API_KEY,} from "./Constants"; 
+
+
+//Components 
+import Image from "./components/Image/Image.js"; 
+import Explanation from "./components/Explanation/Explanation.js";
+
+
+//stylesheets
 import "./App.css";
 
+
 function App() {
-  const [nasaData, setNasaData] = useState({}); 
+  const [nasaData, setNasaData] = useState([]); 
 
   useEffect(() => {
-      axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
-      .then((resp) => {
-        console.log(resp); 
-        setNasaData(resp.data); 
-      })
-      .catch((error) => {
-        console.log(error); 
-      });  
-  }, []); 
+    const fetchData = () => {
+        axios.get(`${API_URL}?api_key=${API_KEY}`)
+        .then((res) => {
+          console.log(res.data); 
+          setNasaData(res.data)
+        })
+        .catch((err) => {
+          console.error(err);
+        }); 
+    };
+    fetchData(); 
+   }, []); 
 
   return (
     <div className="App">
-      <h1>Astronomy Picture of the Day</h1>
-      <p>
-        Each day a different image or photograph of our fascinating universe is featured, along with a 
-        brief explanation written by a professional astronomer. {''}
-         <span role="img" aria-label='go!'>🚀</span>!
-      </p>
-      <NasaImage nasaImage={nasaData} />
+      <Image nasaURL={nasaData.url} />
+      <Explanation text={nasaData.explanation} />
     </div>
   );
 }
+
 
 export default App;

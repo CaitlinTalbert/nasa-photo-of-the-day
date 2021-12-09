@@ -1,12 +1,18 @@
 import React, { useState } from "react"; 
 import "./index.css"; 
+import styled from "styled-components";
+
+const StyledExplanation = styled.div`
+    background-color: ${props => props.theme.primaryColor};
+`
+
 
 const Explanation = (props) => {
     const { text } = props; 
     return (
-        <div>
+        <StyledExplanation>
             <h3>{text}</h3>
-        </div>
+        </StyledExplanation>
     ); 
 }; 
 
